@@ -41,6 +41,7 @@ public class TestMock extends AccuweatherMockAbstractTest{
     void testTenDays() {
         logger.info("test 2 is run");
 
+        //тут вместо urlPathEqualTo(code200) должно быть urlPathEqualTo(code400) 
         stubFor(get(urlPathEqualTo(code200)).withQueryParam("i", equalTo("string"))
                 .withHeader("Accept", equalTo("text/xml"))
                 .willReturn(aResponse().withStatus(400).withBody("Failed")));
